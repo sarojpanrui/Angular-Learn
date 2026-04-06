@@ -1,0 +1,29 @@
+<div class="flex flex-row">
+  <form (submit)="onSubmit($event)" class="flex flex-col gap-5">
+    <input
+      type="email"
+      [formField]="loginForm.email"
+      placeholder="Enter email"
+      class="border-2 p-3 rounded-2xl"
+    />
+    @if (loginForm.email().touched() && loginForm.email().invalid()) {
+      <p class="text-red-500">
+        {{ loginForm.email().errors()[0].message }}
+      </p>
+    }
+
+    <input
+      type="password"
+      [formField]="loginForm.password"
+      placeholder="Enter password"
+      class="border-2 p-3 rounded-2xl"
+    />
+    @if (loginForm.password().touched() && loginForm.password().invalid()) {
+      <p class="text-red-500">
+        {{ loginForm.password().errors()[0].message }}
+      </p>
+    }
+
+    <button type="submit" class="p-3 bg-blue-400 rounded-2xl" (click)="Login()">Login</button>
+  </form>
+</div>

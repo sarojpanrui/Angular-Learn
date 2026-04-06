@@ -1,0 +1,12 @@
+<div class="flex justify-center p-5">
+
+    @if (isLoggedin())
+    {
+         <button class="px-3 py-2 bg-red-400 border-2 rounded-2xl" (click)="Logout()">Logout</button>
+    }
+    @else{
+         <button class="px-3 py-2 bg-blue-400 border-2 rounded-2xl" (click)="Login()">Login</button>
+    }
+   
+   
+</div>

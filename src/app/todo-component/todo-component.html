@@ -1,0 +1,24 @@
+<p class="text-2xl font-bold">Todo App</p>
+
+<input
+  placeholder="Enter task"
+  class="p-3 border-2 border-gray-400 rounded-2xl"
+  [value]="inputText"
+  (input)="inputText = $any($event.target.value)"
+/>
+
+<button class="p-3 bg-blue-500 rounded-2xl" (click)="add()">Add</button>
+
+<div class="b border-2 border-gray-400 h-[300px] w-[500px] rounded-2xl">
+  <ul>
+    @for (todo of store.todos(); track $index) {
+      <li>
+        <span> {{ $index + 1 }}.{{ todo.text }} </span>
+
+        <button (click)="store.deleteTodo($index)" class="p-3 bg-red-500 rounded-2xl">
+          Delete
+        </button>
+      </li>
+    }
+  </ul>
+</div>

@@ -1,0 +1,13 @@
+<div class="p-10 flex justify-center">
+    <div class="b h-[50%] w-[50%] border-2 border-gray-300 flex justify-center rounded-2xl flex-col gap-3">
+        <p class="font-bold text-4xl flex justify-center">Simple Counter App</p>
+
+        <p class="text-2xl font-bold flex justify-center">Count Value = {{count()}}</p>
+
+        <div class="flex gap-5 p-5 justify-center">
+            <button class="p-5 bg-blue-500 border-2" (click)="Increment()">+</button>
+            <button class="p-5 bg-blue-500 border-2" (click)="Decrement()">-</button>
+            <button class="p-5 bg-red-500 border-2" (click)="Reset()">Reset</button>
+        </div>
+    </div>
+</div>

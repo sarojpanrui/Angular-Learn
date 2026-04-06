@@ -1,0 +1,31 @@
+<div class="flex justify-center flex-col">
+  <input
+    placeholder="Enter todo"
+    class="border-2 p-3 rounded-2xl border-gray-400"
+    [value]="todo()"
+    (input)="todo.set($any($event.target).value)"
+  />
+
+  <button
+    class="p-3 border-2 rounded-2xl bg-blue-400 text-white"
+    (click)="addTodo()"
+  >
+    Add
+  </button>
+
+  <div class="border-2 border-gray-300 w-[50%] min-h-[200px] mt-4 p-4">
+    <ul>
+      @for(item of todos(); track $index){
+        <li class="flex gap-3">
+          <span class="p-2">{{ $index + 1 }}.</span>
+
+          <span class="p-2 text-2xl">{{ item.text }}</span>
+
+          <button class="b bg-red-500 p-2 rounded-2xl" (click)="deleteTodo($index)">Delete</button>
+
+           <button class="b bg-blue-500 p-2 rounded-2xl" (click)="deleteTodo($index)">Mark as Done</button>
+        </li>
+      }
+    </ul>
+  </div>
+</div>

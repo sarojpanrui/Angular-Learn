@@ -1,0 +1,17 @@
+<!-- @for(item of Items; track $index){
+    @if($first){
+        <p>First Item is {{item}}</p>
+    }
+    @else if($last){
+        <p>Last Item is {{item}}</p>
+    }
+    @else{
+        <p>{{$index+1}}.{{ item }}</p>
+    }
+    
+} -->
+@for (item of Items; track $index) {
+  <p [class]="$odd ? 'bg-red-400' : 'bg-blue-400'">
+    {{ item }}
+  </p>
+}
