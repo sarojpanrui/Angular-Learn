@@ -17,7 +17,7 @@ import { Card } from './shared/card/card';
 import { RouterOutlet,RouterLink } from '@angular/router';
 import { Navber } from './navber/navber';
 import { Footer } from './footer/footer';
-import { toast, NgxSonnerToaster } from 'ngx-sonner';
+import { NgxSonnerToaster } from 'ngx-sonner';
 
 
 

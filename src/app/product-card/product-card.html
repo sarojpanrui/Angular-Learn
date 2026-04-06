@@ -1,0 +1,8 @@
+<div class="border rounded-xl p-4 shadow">
+  <h2 class="font-bold">{{ product().name }}</h2>
+  <p>{{ product().category }}</p>
+  <p>₹{{ product().price }}</p>
+  <p>Stock: {{ product().stock }}</p>
+
+  <button class="p-2 bg-blue-300 rounded-2xl" (click)="view(product().id)">view</button>
+</div>

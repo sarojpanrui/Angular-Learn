@@ -1,0 +1,5 @@
+<div class="flex gap-5 flex-wrap">
+  @for (product of data(); track product.id) {
+    <app-product-card [product]="product"></app-product-card>
+  }
+</div>
