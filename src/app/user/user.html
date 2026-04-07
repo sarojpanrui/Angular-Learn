@@ -1,0 +1,81 @@
+<div class="flex justify-center flex-col">
+  <div
+    class="flex justify-center mt-5 gap-3 border-2 p-5 w-[50%] ml-100 border-gray-300 rounded-2xl"
+  >
+    <input
+      type="text"
+      placeholder="Enter your name"
+      class="px-3 py-2 border-2 border-gray-400 rounded-2xl"
+      [value]="name()"
+      (input)="name.set($event.target.value)"
+    />
+
+    <input
+      type="text"
+      placeholder="Enter your username"
+      class="px-3 py-2 border-2 border-gray-400 rounded-2xl"
+      [value]="username()"
+      (input)="username.set($event.target.value)"
+    />
+    <input
+      type="text"
+      placeholder="Enter your email"
+      class="px-3 py-2 border-2 border-gray-400 rounded-2xl"
+      [value]="email()"
+      (input)="email.set($event.target.value)"
+    />
+
+    <button class="p-3 bg-blue-400 rounded-2xl" (click)="SubmitForm()">Submit</button>
+  </div>
+
+  <h2 class="text-2xl font-bold text-center mt-5">User List</h2>
+  <div class="flex justify-center mt-5 gap-3">
+    <ul class="flex gap-3 flex-col text-m font-bold">
+      @for (user of userData(); track $index) {
+        <li>
+          ({{ user.id }}).{{ user.name }} - {{ user.email }}
+
+          <button class="p-3 bg-red-400 rounded-2xl" (click)="deleteUser(user.id)">Delete</button>
+          <button
+            class="p-3 bg-blue-400 rounded-2xl"
+            (click)="openForm(user.id, user.name, user.username, user.email)"
+          >
+            Update
+          </button>
+        </li>
+      }
+    </ul>
+  </div>
+</div>
+
+@if (form()) {
+  
+    <div class="flex justify-center mt-5 gap-3 p-5 w-[50%] ml-100 rounded-2xl">
+      <input
+        type="text"
+        [placeholder]="editname()"
+        class="px-3 py-2 border-2 border-gray-400 rounded-2xl"
+        [value]="editname()"
+        (input)="editname.set($event.target.value)"
+      />
+
+      <input
+        type="text"
+        placeholder="Enter your username"
+        class="px-3 py-2 border-2 border-gray-400 rounded-2xl"
+        [value]="editusername()"
+        (input)="editusername.set($event.target.value)"
+      />
+      <input
+        type="text"
+        placeholder="Enter your email"
+        class="px-3 py-2 border-2 border-gray-400 rounded-2xl"
+        [value]="editemail()"
+        (input)="editemail.set($event.target.value)"
+      />
+
+      <button class="p-3 bg-blue-400 rounded-2xl" (click)="UpdateUser(editId())">Update</button>
+      <button class="p-3 bg-red-400 rounded-2xl" (click)="closeForm()">Cancel</button>
+    </div>
+  
+}

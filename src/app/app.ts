@@ -18,6 +18,7 @@ import { RouterOutlet,RouterLink } from '@angular/router';
 import { Navber } from './navber/navber';
 import { Footer } from './footer/footer';
 import { NgxSonnerToaster } from 'ngx-sonner';
+import { User } from './user/user';
 
 
 
@@ -25,7 +26,7 @@ import { NgxSonnerToaster } from 'ngx-sonner';
 @Component({
   selector: 'app-root',
   imports:[Events,Login,Counter,Setter,Condition,Loop,Theme,ConvertPipe,Todo,ParentToChild,ChildToParent,TodoComponent,
-    LoginForm,Card,RouterLink,RouterOutlet,Navber,Footer,NgxSonnerToaster
+    LoginForm,Card,RouterLink,RouterOutlet,Navber,Footer,NgxSonnerToaster,User
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
